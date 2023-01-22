@@ -10,7 +10,25 @@ const Home = () => {
 
     const [loader, setLoader] = useState(false);
 
-    const getBooks = (e, prompt) => {
+    const [prompt, setPrompt] = useState('');
+
+    const [rows, setRows] = useState(1);
+
+    function handleRows(e) {
+        if(window.innerWidth > 576 && e.target.value.length > 60 || window.innerWidth <= 576 && e.target.value.length > 30) {
+            setRows(10);
+        } else {
+            setRows(1);
+        }
+    }
+    
+
+    function handleChange(e) {
+        setPrompt(e.target.value);
+        handleRows(e);
+    }
+
+    const getBooks = (e) => {
         if(prompt.length) {
             e.preventDefault();
             setLoader(true);
@@ -37,7 +55,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            <Hero getBooks={getBooks} />
+            <Hero rows={rows} handleChange={handleChange} prompt={prompt} getBooks={getBooks} />
             {loader ? <Loader /> : books.length ? <BooksList books={books} /> : ''}
         </div>
     )
