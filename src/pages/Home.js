@@ -37,7 +37,7 @@ const Home = () => {
     return (
         <div className="home">
             <Hero getBooks={getBooks} />
-            <BooksList loader={loader} books={books} />
+            {books && <BooksList loader={loader} books={books} />}
         </div>
     )
 }

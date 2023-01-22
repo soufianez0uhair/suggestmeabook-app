@@ -25,6 +25,11 @@ body {
 .hero__img {
   height: 35rem;
 }
+@media screen and (max-width: 576px) {
+  .hero__img {
+    height: 20rem;
+  }
+}
 .hero__text {
   color: #000;
   margin-bottom: 2rem;

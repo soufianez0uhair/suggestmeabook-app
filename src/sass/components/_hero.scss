@@ -3,6 +3,9 @@
     min-height: 100vh;
     &__img {
         height: 35rem;
+        @include breakpoints($sm) {
+            height: 20rem;
+        }
     }
     &__text {
         color: #000;
