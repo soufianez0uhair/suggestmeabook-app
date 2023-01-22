@@ -1,0 +1,15 @@
+.searchBooks {
+    &__input {
+        outline: none;
+        border: none;
+        font-size: 1.4rem;
+        padding: 2rem 2.5rem 2rem 1.5rem;
+        margin-right: -2.75rem;
+        transition: height 4s ease-in;
+        height: auto;
+        resize: none;
+        &-box {
+            display: flex;
+        }
+    }
+}

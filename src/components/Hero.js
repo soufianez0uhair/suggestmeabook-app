@@ -1,8 +1,13 @@
 import React from 'react'
-
-const Hero = () => {
+import SearchBooks from './SearchBooks';
+import BooksWizard from '../assets/books-wizard.png';
+const Hero = ({getBooks}) => {
   return (
-    <div>hero</div>
+    <div className="hero">
+        <img src={BooksWizard} alt="a wizard handling a book" className="hero__img" />
+        <h1 className="hero__text">Books Suggestions that match your <span>desires.</span></h1>
+        <SearchBooks getBooks={getBooks} />
+    </div>
   )
 }
 

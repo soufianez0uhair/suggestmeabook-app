@@ -1,0 +1,21 @@
+.hero {
+    background-color: #F2F2F2;
+    min-height: 100vh;
+    &__img {
+        height: 35rem;
+    }
+    &__text {
+        color: #000;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        font-size: 2.5rem;
+        span {
+            color: #024569;
+        }
+    }
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
