@@ -108,6 +108,7 @@ body {
 .booksListItem__description {
   position: absolute;
   height: 100%;
+  width: 100%;
   top: 100%;
   background: #fff;
   padding: 1rem;

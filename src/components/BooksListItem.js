@@ -5,12 +5,9 @@ const Book = ({book}) => {
         authors += i === book.authors.length - 1 ? book.authors[i] + '.' : `${book.authors[i] + ', '}`
     }
 
-    console.log(authors);
-
-    console.log(book.authors);
     return (
         <div className="booksListItem">
-            <img src={book.frontCover} alt={book.title + ' book front cover'} className="booksListItem__img" />
+            <img src={book.frontCover ? book.frontCover : 'https://islandpress.org/sites/default/files/default_book_cover_2015.jpg'} alt={book.title + ' book front cover'} className="booksListItem__img" />
             <div className="booksListItem__details">
                 <h3 className="booksListItem__title">{book.title}</h3>
                 <span className="booksListItem__authors">by: {authors}</span>
