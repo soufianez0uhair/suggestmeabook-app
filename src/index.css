@@ -64,6 +64,59 @@ body {
   margin: 0 auto;
   display: block;
   margin-top: 1rem;
+  border: 0.1rem solid #000;
+}
+.btn--search:hover {
+  color: #000;
+  background: #fff;
+  border: #000 0.1rem solid;
+}
+
+.booksList {
+  display: flex;
+  padding: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.booksListItem {
+  position: relative;
+  width: 20rem;
+  overflow: hidden;
+  background: #c8b6ff;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.booksListItem:hover .booksListItem__description {
+  top: 0;
+}
+.booksListItem__img {
+  width: 100%;
+}
+.booksListItem__details {
+  padding: 0.5rem;
+  color: #000;
+}
+.booksListItem__title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.booksListItem__authors {
+  font-size: 1.2rem;
+}
+.booksListItem__description {
+  position: absolute;
+  height: 100%;
+  top: 100%;
+  background: #fff;
+  padding: 1rem;
+  transition: top 0.3s ease-in;
+  font-size: 1.2rem;
+  overflow: auto;
+}
+.booksListItem__description p {
+  margin-top: 0.75rem;
 }
 
 /*# sourceMappingURL=index.css.map */

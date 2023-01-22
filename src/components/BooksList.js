@@ -1,8 +1,15 @@
 import React from 'react'
+import Book from './BooksListItem'
 
-const BooksList = () => {
+const BooksList = ({books}) => {
   return (
-    <div>BooksList</div>
+    <div className="booksList">
+        {
+            books.map(book => (
+                <Book book={book} />
+            ))
+        }
+    </div>
   )
 }
 

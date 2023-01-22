@@ -12,17 +12,14 @@ const Home = () => {
         if(prompt.length) {
            const response = await axios.post('http://localhost:4000/api/books', {input: prompt});
 
-            console.log(response);
-
            setBooks(response.data.books); 
         }
     }
 
-    console.log(books);
     return (
         <div className="home">
             <Hero getBooks={getBooks} />
-            <BooksList />
+            <BooksList books={books} />
         </div>
     )
 }
