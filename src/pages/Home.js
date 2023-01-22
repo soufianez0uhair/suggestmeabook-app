@@ -17,7 +17,7 @@ const Home = () => {
     }
 
     const fetchBooks = async () => {
-        const response = await axios.post('http://localhost:4000/api/books', {input: prompt});
+        const response = await axios.post('https://suggestmeabook-api.onrender.com/api/books', {input: prompt});
 
         setBooks(response.data.books); 
     }
@@ -37,7 +37,7 @@ const Home = () => {
     return (
         <div className="home">
             <Hero getBooks={getBooks} />
-            {books && <BooksList loader={loader} books={books} />}
+            {books.length ? <BooksList loader={loader} books={books} /> : ''}
         </div>
     )
 }

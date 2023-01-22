@@ -7,7 +7,7 @@ const SearchBooks = ({getBooks}) => {
   const [cols, setCols] = useState(window.innerWidth > 576 ? 60 : 40);
 
   function handleRows(e) {
-    if(e.target.value.length > 60) {
+    if(window.innerWidth > 576 && e.target.value.length > 60 || window.innerWidth <= 576 && e.target.value.length > 30) {
         setRows(10);
     } else {
         setRows(1);
@@ -21,13 +21,23 @@ const SearchBooks = ({getBooks}) => {
     handleRows(e);
   }
 
-  useEffect(() => {
+  /* useEffect(() => {
     if(window.innerWidth > 576) {
         setCols(60);
     } else {
         setCols(30);
     }
-  }, [window.innerWidth]);
+  }, [window.innerWidth]); */
+
+  window.addEventListener("resize", () => {
+    if(window.innerWidth > 576) {
+        setCols(60);
+    } else if(window.innerWidth > 400) {
+        setCols(40);
+    } else {
+        setCols(30);
+    }
+  })
 
   return (
     <form onSubmit={((e) => getBooks(e, prompt))} className="searchBooks">
