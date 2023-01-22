@@ -1,14 +1,13 @@
 import React from 'react'
 import Book from './BooksListItem'
-import Loader from './Loader'
 
-const BooksList = ({books, loader}) => {
+const BooksList = ({books}) => {
   return (
     <div className="booksList">
         {
-            !loader ? books.map(book => (
+            books.map(book => (
                 <Book book={book} key={book.id} />
-            )) : <Loader />
+            ))
         }
     </div>
   )

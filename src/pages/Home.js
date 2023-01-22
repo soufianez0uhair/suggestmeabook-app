@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import BooksList from '../components/BooksList';
 import Hero from '../components/Hero';
+import Loader from '../components/Loader';
 
 const Home = () => {
     const [books, setBooks] = useState([]);
@@ -37,7 +38,7 @@ const Home = () => {
     return (
         <div className="home">
             <Hero getBooks={getBooks} />
-            {books.length ? <BooksList loader={loader} books={books} /> : ''}
+            {loader ? <Loader /> : books.length ? <BooksList books={books} /> : ''}
         </div>
     )
 }
